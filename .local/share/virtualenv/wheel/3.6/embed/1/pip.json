@@ -1,0 +1,17 @@
+{
+  "completed": "2020-08-17T09:38:37.746754Z",
+  "periodic": true,
+  "started": "2020-08-17T09:21:34.027330Z",
+  "versions": [
+    {
+      "filename": "pip-20.2.2-py2.py3-none-any.whl",
+      "found_date": "2020-08-17T09:21:34.245387Z",
+      "release_date": null
+    },
+    {
+      "filename": "pip-20.2.1-py2.py3-none-any.whl",
+      "found_date": "2020-08-17T09:38:36.425692Z",
+      "release_date": null
+    }
+  ]
+}
