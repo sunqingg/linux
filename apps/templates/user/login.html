@@ -5,12 +5,45 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>我是登录页面</h1>
-    <h3>{{ base_url }}</h3>
-    <ul>
-        {% for k,v in cookies.items() %}
-        <li>{{ k }}:{{ v }}</li>
-        {% endfor %}
-    </ul>
+<h1>我是登录页面</h1>
+<h3>{{ base_url }}</h3>
+{#    <ul>#}
+{#        {% for k,v in cookies.items() %}#}
+{#        <li>{{ k }}:{{ v }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+<form name="login_form" action="/user/login" method="post">
+    <input type="text" name="phone" placeholder="手机号"><br>
+    <input type="password" name="passwd" palceholder="口令"><br>
+    <button>登录</button>
+    <a href="#">申请注册账号</a>
+</form>
+<div id="val_info" style="color: red;">
+    {{ msg }}
+</div>
+<script>
+    function $(id) {
+        return document.getElementById(id)
+    }
+
+    document.forms[0].onsubmit = function (ev) {
+        if (!/\d{11}/.test(this.phone.value)) {
+            $('val_info').innerHTML('账号是11位的电话号码');
+            return false
+        }
+
+        if (!/\w{6,}/.test(this.passwd.value)) {
+            $('val_info').innerHTML('密码大于6位的数字、字母、下划线');
+        }
+        $('val_info').innerHTML('')
+    }
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
